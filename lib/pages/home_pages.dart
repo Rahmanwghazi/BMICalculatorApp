@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 controller: _heightController,
                                 style: TextStyle(
                                   fontSize: 42,
-                                  fontWeight: FontWeight.w300,
+                                  fontWeight: FontWeight.bold,
                                   color: mainHexColor,
                                 ),
                                 keyboardType: TextInputType.number,
@@ -91,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 controller: _weightController,
                                 style: TextStyle(
                                   fontSize: 42,
-                                  fontWeight: FontWeight.w300,
+                                  fontWeight: FontWeight.bold,
                                   color: mainHexColor,
                                 ),
                                 keyboardType: TextInputType.number,
@@ -165,45 +165,46 @@ class _HomeScreenState extends State<HomeScreen> {
               ]),
             ),
             SizedBox(height: 20),
-            Visibility(
-              visible: _textResult.isNotEmpty,
-              child: Container(
-                child: Column(
-                  children: [
-                    Text(
-                      'Your BMI: ',
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        color: accentHexColor),
-                    ),
-                    Container(
-                      child: Text(
-                        _bmiresult.toStringAsFixed(2),
+            Container(
+              child: Visibility(
+                visible: _textResult.isNotEmpty,
+                child: Container(
+                  child: Column(
+                    children: [
+                      Text(
+                        'Your BMI: ',
                         style: GoogleFonts.poppins(
-                            fontSize: 75, color: accentHexColor),
+                            fontSize: 14, color: accentHexColor),
                       ),
-                    ),
-                    Text(
-                      _textResult,
-                      style: GoogleFonts.poppins(
-                          fontSize: 20, color: accentHexColor),
-                    ),
-                    SizedBox(height: 10),
-                    Image.asset(
-                      'assets/book.png',
-                      width: 20,
-                    ),
-                    Text(
-                      "BMI Categories:\n\nUnderweight = <18.5\nNormal weight = 18.5–24.9\nOverweight = 25–29.9\nObesity = BMI of 30 or greater",
-                      style: GoogleFonts.poppins(
-                          fontSize: 14, color: Colors.white60),
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 10),
-                  ],
+                      Container(
+                        child: Text(
+                          _bmiresult.toStringAsFixed(2),
+                          style: GoogleFonts.poppins(
+                              fontSize: 75, color: accentHexColor),
+                        ),
+                      ),
+                      Text(
+                        _textResult,
+                        style: GoogleFonts.poppins(
+                            fontSize: 20, color: accentHexColor),
+                      ),
+                      SizedBox(height: 10),
+                      Image.asset(
+                        'assets/book.png',
+                        width: 20,
+                      ),
+                      Text(
+                        "BMI Categories:\n\nUnderweight = <18.5\nNormal weight = 18.5–24.9\nOverweight = 25–29.9\nObesity = BMI of 30 or greater",
+                        style: GoogleFonts.poppins(
+                            fontSize: 14, color: Colors.white60),
+                        textAlign: TextAlign.center,
+                      ),
+                      SizedBox(height: 10),
+                    ],
+                  ),
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),
