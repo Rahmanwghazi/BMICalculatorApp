@@ -123,9 +123,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       _bmiresult = _w / (_hcm * _hcm);
                       if (_bmiresult >= 30) {
                         _textResult = "You\'re obese";
-                      } else if (_bmiresult >= 25 && _bmiresult <= 29.9) {
-                        _textResult = "You\'re normal weight";
-                      } else if (_bmiresult >= 18.5 && _bmiresult <= 24.9) {
+                      } else if (_bmiresult >= 25 && _bmiresult <= 29.99) {
+                        _textResult = "You\'re overweight";
+                      } else if (_bmiresult >= 18.59 && _bmiresult <= 24.99) {
                         _textResult = "You\'re normal weight";
                       } else {
                         _textResult = "You\'re underweight";
